@@ -4,6 +4,7 @@
     --color-menu: #f8f9fa;
     --color-text-pos: #000000;
     --color-text-neg: #ffffff;
+    --height-normal: 1.1rem;
 }
 
 body {
@@ -45,6 +46,49 @@ body {
 #content {
     margin: 20px 0 0 0;
 }
+
+/* LAST MEASURE */
+#data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dataDate, #dataTemp, #dataHum, #dataPress {
+    padding: .2rem;
+    text-align: center;
+}
+
+/* TABLE */
+table {
+	margin: 0.5rem;;
+	width: 80%;
+	background-color: var(--neg-color);
+	border-collapse: collapse;
+	border-width: 1px;
+	border-style: solid;
+	border-color: var(--color-primary);
+	text-align: center;
+}
+
+thead {
+	box-shadow:inset 0px 1px 3px 0px var(--color-secondary);
+	background:linear-gradient(to bottom, var(--color-primary) 5%, #6c7c7c 100%);
+	background-color:var(--color-primary);
+	border:1px solid var(--color-primary); /* #566963; */
+	color: var(--color-text-neg);
+	font-weight:bold;
+	text-shadow:0px -1px 0px #2b665e;
+}
+
+td {
+	border-width: 1px;
+	border-style: solid;
+	border-color: var(--color-primary);
+	padding: 10px;
+	font-size: var(--height-normal);
+}
+
 
 @media screen and (max-width: 1024px) {
     .navbar {
