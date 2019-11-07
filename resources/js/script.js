@@ -34,10 +34,6 @@ document.getElementById('graphMeasures').addEventListener('click', function (eve
     // Get Data by API
     getDataApi('graphMeasures', displayGraph);
 
-    // <canvas id="myChart" width="400" height="400"></canvas>
-    // insertElement('canvas', "", '', "myChart", 400, 400);
-    // defineGraph();
-
     // Highlight active Menu
     highlightMenu('graphMeasures');
 });
@@ -109,7 +105,7 @@ const insertElement = function (inElement = 'content', typeElement, contentEleme
     objContent.appendChild(newData);
 }
 
-function convertData(type, data) {
+function convertData(type, data) {    
     switch (type) {
         case 'datetime':
             dateField = new Date(data);
@@ -131,35 +127,16 @@ const insertTR = function (divParent, jsonData, dictonnary) {
     const parent = document.getElementById(divParent);
     const newTR = document.createElement('tr');
     let newTD;
-    // const moment = require('moment');
     let contentField;
 
     for (field in jsonData) {
-        // console.log(jsonData);
-
         if (field in dictonnary && dictonnary[field].visible) {
             newTD = document.createElement('td');
             if (divParent == 'tableHead') {
                 newTD.innerText = dictonnary[field].entete;
             } else {
                 // Display in chosen format
-                contentField = convertData(dictonnary[field].type, dictonnary[field]);
-                // switch (dictonnary[field].type) {
-                //     case 'datetime':
-                //         dateField = new Date(jsonData[field]);
-                //         contentField = moment(dateField).format('DD/MM/YYYY HH:mm')
-                //         // console.log(moment.locale());
-                //         break;
-                //     case 'float,1d':
-                //         contentField = Number(jsonData[field]).toFixed(1);
-                //         break;
-                //     case 'float,2d':
-                //         contentField = Number(jsonData[field]).toFixed(2);
-                //         break;
-                //     default:
-                //         break;
-                // }
-                console.log(contentField);
+                contentField = convertData(dictonnary[field].type, jsonData[field]);
                 newTD.innerText = contentField;
             }
             newTR.appendChild(newTD);
@@ -284,7 +261,6 @@ const displayTable = function (jsonData) {
             entete: 'Humidité'
         }
     }
-
 
     insertElement('content', 'table', "", 'tableDatas');
 
