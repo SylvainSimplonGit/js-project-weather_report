@@ -1,3 +1,4 @@
+// EventListener on clic on menu entry "la dernière mesure"
 document.getElementById('lastMeasure').addEventListener('click', function (event) {
     // Remove all in section content
     deleteContent();
@@ -7,6 +8,7 @@ document.getElementById('lastMeasure').addEventListener('click', function (event
     highlightMenu('lastMeasure');
 });
 
+// EventListener on clic on menu entry "les top mesures"
 document.getElementById('topMeasures').addEventListener('click', function (event) {
     // Remove all in section content
     deleteContent();
@@ -18,6 +20,7 @@ document.getElementById('topMeasures').addEventListener('click', function (event
     highlightMenu('topMeasures');
 });
 
+// EventListener on clic on menu entry "les mesures en tableau"
 document.getElementById('tableMeasures').addEventListener('click', function (event) {
     // Remove all in section content
     deleteContent();
@@ -28,6 +31,7 @@ document.getElementById('tableMeasures').addEventListener('click', function (eve
     highlightMenu('tableMeasures');
 });
 
+// EventListener on clic on menu entry "les mesures en graphique"
 document.getElementById('graphMeasures').addEventListener('click', function (event) {
     // Remove all in section content
     deleteContent();
