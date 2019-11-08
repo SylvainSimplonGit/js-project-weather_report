@@ -132,16 +132,28 @@ const displayLastMeasure = function (jsonData) {
     const strDate = dataDate.toLocaleString("fr-FR");
 
     const dataTemp = Number(jsonData.temperature).toFixed(1);
+    dictGraph.temperature.curValue = dataTemp;
 
     const dataHum = Number(jsonData.humidity).toFixed(2);
+    dictGraph.humidity.curValue = dataHum;
 
     const dataPress = Number(jsonData.pressure).toFixed(2);
+    dictGraph.pressure.curValue = dataPress;
 
+    console.log(dictGraph);
+    
     // Add data in DOM
-    // console.log(jsonData);
-    insertElement('content', 'div', "", 'data');
-    insertElement('data', 'div', "Dernière mesure du " + strDate, 'dataDate');
-    addDataInDOM('data', dataTemp, dataHum, dataPress);
+    if (window.screen.availWidth < 340) {
+        insertElement('content', 'div', "", 'chart');
+        for (key in dictGraph) {
+            insertElement('chart', 'canvas', "", dictGraph[key].idCanvas);
+            displayOneBar(dictGraph[key].idCanvas, dictGraph[key].title + " (" + dictGraph[key].labelY + ")", dictGraph[key].labelY, dictGraph[key].minValue, dictGraph[key].maxValue, dictGraph[key].curValue);
+        }   
+    } else {
+        insertElement('content', 'div', "", 'data');
+        insertElement('data', 'div', "Dernière mesure du " + strDate, 'dataDate');
+        addDataInDOM('data', dataTemp, dataHum, dataPress);
+    }
 }
 
 // function to display the top measures of Humidity with the right format
@@ -230,20 +242,29 @@ const dictGraph = {
         idCanvas: 'chartTemperature',
         lineColor: '#7395AE',
         labelY: '°C',
+        minValue: 0,
+        maxValue: 30,
+        curValue: 0,
         datas: []
     },
     pressure: {
         title: 'Pression',
         idCanvas: 'chartPressure',
         lineColor: '#557A95',
-        labelY: '% hum',
+        labelY: 'hPa',
+        minValue: 990,
+        maxValue: 1015,
+        curValue: 0,
         datas: []
     },
     humidity: {
         title: 'Humidité',
         idCanvas: 'chartHumidity',
         lineColor: '#B1A296',
-        labelY: 'hPa',
+        labelY: '% hum',
+        minValue: 0,
+        maxValue: 100,
+        curValue: 0,
         datas: []
     }
 }
@@ -269,12 +290,12 @@ const displayGraph = function (jsonData) {
 
     for (key in dictGraph) {
         insertElement('chart', 'canvas', "", dictGraph[key].idCanvas);
-        displayOneGraph(dictGraph[key].idCanvas, dictGraph[key].title, dictGraph[key].labelY, dictGraph[key].lineColor, arrLabels, dictGraph[key].datas);
-    }    
+        displayOneGraphLine(dictGraph[key].idCanvas, dictGraph[key].title, dictGraph[key].labelY, dictGraph[key].lineColor, arrLabels, dictGraph[key].datas);
+    }
 }
 
 // function to display one graph
-const displayOneGraph = function (chart, libelle, labelY, lineColor, arrLabels, arrDatas) {
+const displayOneGraphLine = function (chart, libelle, labelY, lineColor, arrLabels, arrDatas) {
     
     var ctx = document.getElementById(chart).getContext('2d');
     var myChart = new Chart(ctx, {
@@ -325,6 +346,46 @@ const displayOneGraph = function (chart, libelle, labelY, lineColor, arrLabels, 
                     }
                 }]
             }
+        }
+    });
+}
+
+// function to display one bar graph
+const displayOneBar = function (chart, libelle, scaleData, mini, maxi, value) {
+    var ctx = document.getElementById(chart);
+    var mychart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+            labels: [scaleData],
+            datasets: [{
+                data: [value]
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: libelle
+            },
+            tooltips: {
+                // mode: 'index',
+                intersect: false
+            },
+            responsive: true,
+            legend: {
+                display: false
+            },
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        min: mini,
+                        max: maxi
+                    }
+                }],
+                yAxes: [{
+                    
+                }]
+            },
+            
         }
     });
 }
@@ -429,4 +490,3 @@ const getDataApi = function (
 //     // Send request
 //     request.send();
 // }
-

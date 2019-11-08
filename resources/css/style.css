@@ -147,4 +147,7 @@ td {
         font-size: var(--height-small);
     }
     
+    #chartTemperature, #chartPressure, #chartHulidity {
+        padding-bottom: 5px;
+    }
 }
