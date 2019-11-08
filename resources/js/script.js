@@ -336,6 +336,9 @@ const displayOneGraphLine = function (chart, libelle, labelY, lineColor, arrLabe
                     scaleLabel: {
                         display: true,
                         labelString: 'Date'
+                    },
+                    ticks : {
+                        maxTicksLimit: 8
                     }
                 }],
                 yAxes: [{
