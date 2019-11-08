@@ -13,7 +13,7 @@
   - [Responsive](#responsive)
 
 <p align="center">
-    <img width="30%" src="resources\screenshots\menu-none.png">
+    <img width="30%" style="border: 1px solid #000000;" src="resources\screenshots\menu-none.png">
 </p>
 
 ## Description du projet
@@ -98,12 +98,12 @@ Lorsque vous cliquez sur les différents menus, vous verrez apparaitre les donn�
 
 Menu "la dernière mesure" :
 <p align="center">
-    <img width="30%" src="resources\screenshots\menu-lastMeasures.png">
+    <img width="30%" style="border: 1px solid #000000;" src="resources\screenshots\menu-lastMeasures.png">
 </p>
 
 Menu "les top mesures" :
 <p align="center">
-    <img width="30%" src="resources\screenshots\menu-topMeasures.png">
+    <img width="30%" style="border: 1px solid #000000;" src="resources\screenshots\menu-topMeasures.png">
 </p>
 
 Menu "les mesures en tableau" :
@@ -111,7 +111,7 @@ Menu "les mesures en tableau" :
 Menu "les mesures en graphique" :
 
 <p align="center">
-    <img width="30%" src="resources\screenshots\menu-graphMeasures.png">
+    <img width="30%" style="border: 1px solid #000000;" src="resources\screenshots\menu-graphMeasures.png">
 </p>
 
 ## Reste à faire
