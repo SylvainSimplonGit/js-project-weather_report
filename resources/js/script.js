@@ -151,7 +151,7 @@ const displayLastMeasure = function (jsonData) {
         }   
     } else {
         insertElement('content', 'div', "", 'data');
-        insertElement('data', 'div', "Dernière mesure du " + strDate, 'dataDate');
+        insertElement('data', 'h3', "Dernière mesure du " + strDate, 'dataDate');
         addDataInDOM('data', dataTemp, dataHum, dataPress);
     }
 }
@@ -171,7 +171,7 @@ const displayTopMeasureHumidity = function (jsonData) {
     // Add data in DOM
     insertElement('content', 'div', "", 'data');
     insertElement('data', 'div', "", 'dataTopHum');
-    insertElement('dataTopHum', 'div', "Top humidité " + strDate, 'dataDate');
+    insertElement('dataTopHum', 'h3', "Top humidité " + strDate, 'dataDate');
     addDataInDOM('dataTopHum', dataTemp, dataHum, dataPress);
 }
 
@@ -190,7 +190,7 @@ const displayTopMeasurePressure = function (jsonData) {
     // Add data in DOM
     insertElement('content', 'div', "", 'data');
     insertElement('data', 'div', "", 'dataTopPress');
-    insertElement('dataTopPress', 'div', "Top pression " + strDate, 'dataDate');
+    insertElement('dataTopPress', 'h3', "Top pression " + strDate, 'dataDate');
     addDataInDOM('dataTopPress', dataTemp, dataHum, dataPress);
 }
 
@@ -209,7 +209,7 @@ const displayTopMeasureTemperature = function (jsonData) {
     // Add data in DOM
     insertElement('content', 'div', "", 'data');
     insertElement('data', 'div', "", 'dataTopTemp');
-    insertElement('dataTopTemp', 'div', "Top température " + strDate, 'dataDate');
+    insertElement('dataTopTemp', 'h3', "Top température " + strDate, 'dataDate');
     addDataInDOM('dataTopTemp', dataTemp, dataHum, dataPress);
 }
 

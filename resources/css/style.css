@@ -54,8 +54,12 @@ body {
 /* LAST MEASURE */
 #data {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+}
+
+h3 {
+    margin: 10px;
 }
 
 #dataDate, #dataTemp, #dataHum, #dataPress {
@@ -114,6 +118,11 @@ td {
         height: 300px;
         width: 30%;
     }
+    
+    #data {
+        flex-direction: column;
+    }
+    
 }
 
 @media screen and (max-width: 768px) {
