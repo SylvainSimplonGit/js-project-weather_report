@@ -6,6 +6,7 @@
     --color-text-pos: #000000;
     --color-text-neg: #ffffff;
     --height-normal: 1.1rem;
+    --height-small: .8rem;
 }
 
 body {
@@ -94,16 +95,24 @@ td {
 
 /* GRAPHIQUE */
 #chart {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: row;
     height: 200px;
-    width: 80%;
+    width: 30%; */
 }
 
 /* MEDIA QUERY */
 @media screen and (max-width: 1024px) {
     .navbar {
         padding: .5rem 1rem;
+    }
+
+    #chart {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: 300px;
+        width: 30%;
     }
 }
 
@@ -113,12 +122,29 @@ td {
         font-size: 1.5rem;
         padding: .5rem 1rem;
     }
+
+    #chart {
+        flex-direction: column;
+        justify-content: normal;
+        height: 200px;
+        width: 90%;
+    }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 330px) {
     .navbar {
-        flex-direction: column;
         font-size: 1.3rem;
         padding: 1rem 1rem;
     }
+    
+    thead td {
+        padding: 8px;
+        font-size: var(--height-small);
+    }
+
+    tbody td {
+        padding: 3px;
+        font-size: var(--height-small);
+    }
+    
 }
