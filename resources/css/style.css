@@ -1,3 +1,4 @@
+/* DEFINTION CONSTANTES */
 :root {
     --color-primary: #768d87;
     --color-secondary: #91b8b3;
@@ -16,15 +17,16 @@ body {
     justify-content: center;
 }
 
+/* TITLE */
 .title {
     background-color: var(--color-primary);
     color: var(--color-text-neg);
     font-size: 2rem;
     text-align: center;
     padding: 1.1rem 1.5rem;
-    /* border-radius:      0.5rem; */
 }
 
+/* MENU */
 .navbar {
     background-color: var(--color-menu);
     display: flex;
@@ -43,6 +45,7 @@ body {
     color: var(--color-text-neg);
 }
 
+/* CONTENT */
 #content {
     margin: 20px 0 0 0;
 }
@@ -89,7 +92,15 @@ td {
 	font-size: var(--height-normal);
 }
 
+/* GRAPHIQUE */
+#chart {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 80%;
+}
 
+/* MEDIA QUERY */
 @media screen and (max-width: 1024px) {
     .navbar {
         padding: .5rem 1rem;
