@@ -108,6 +108,10 @@ Menu "les top mesures" :
 
 Menu "les mesures en tableau" :
 
+<p align="center">
+    <img width="30%" style="border: 1px solid #000000;" src="resources\screenshots\menu-tableMeasures.png">
+</p>
+
 Menu "les mesures en graphique" :
 
 <p align="center">
