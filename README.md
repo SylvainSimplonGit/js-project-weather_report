@@ -124,6 +124,7 @@ Menu "les mesures en graphique" :
 
 - Pouvoir choisir un intervalle de date pour l'affichage des données du tableau
 - Pouvoir choisir un intervalle de date pour l'affichage des données du graphique
+- Factoriser la fonction displayTopMeasure
 
 ### Responsive
 
