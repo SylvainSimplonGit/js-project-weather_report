@@ -131,3 +131,7 @@ Menu "les mesures en graphique" :
 - ~~Modifier l'affichage du tableau sur un écran inférieure à 700px~~
 - ~~Afficher un graphique "vue-barre" au lieu du graghique "line" pour les écran dont la largeur est inférieure à 400px~~
 - Modifier le menu actuel sur écran dont la largeur est inférieure à 768px pour que les entrées du menus soient affichées qu'au clic sur un bouton (façon bootstrap).
+
+## Références
+
+- [Retours globaux suite à la correction](https://github.com/simplonco/corp-bnp-renault/blob/master/session2/ressource/correction/retour-projet.md)
